@@ -1,97 +1,161 @@
 body {
-    background-color: #eb6882;
-    color: #0a0408;
+  background-color: #eb6882;
+  color: #0a0408;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+  background: linear-gradient(rgba(2, 0, 36, 1) 60%, rgb(87, 84, 84));
+  color: antiquewhite;
 }
 
 #appTitle {
-    text-align: center;
-    margin: 0px auto;
-    display: block;
-    font-family: 'Staatliches', sans-serif;
-    font-size: 80px;
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  /* font-family: 'Staatliches', sans-serif; */
+  font-size: 50px;
+  color: rgb(188, 190, 192);
+  color: antiquewhite;
 }
 
-#genreForm, #playBtn {
+#genreForm {
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  /* border: 1px solid white; */
+  margin-top: 20px;
+  display: flex;
+  width: 50%;
+  padding: 10px;
+  /* justify-content:space-around; */
+}
+
+/* #playBtn{
     text-align: center;
     margin: 0px auto;
     display: block;
-    font-family: 'Fredoka One', sans-serif;
-}
+    border: 1px solid white;
+    display: flex;
+} */
 
 #movieInfo {
-    width:  65%;
-    margin:  32px auto;
+  width: 65%;
+  margin: 32px auto;
+  border: 1px solid antiquewhite;
+  border-radius: 20px;
+  box-shadow: 5px 10px 18px 2px rgb(87, 84, 84);
+  height: 28rem;
+  padding: 20px;
 }
 
 #movieInfo:after {
-    content:  "";
-    display:  table;
-    clear:  both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
-#moviePoster, #movieText {
-    width:  50%;
-    float:  left;
+#moviePoster,
+#movieText {
+  width: 50%;
+  float: left;
 }
 
 img#moviePoster {
-    width:  100%;
-    height:  auto;
-    display:  block;
-    margin:  auto;
+  width: auto;
+  height: 28rem;
+  display: block;
+  margin: auto;
 }
 
 #movieText {
-    font-family: 'Questrial';
-    color: #FEFBEA;
-    line-height: 1.25;
+  font-family: "Questrial";
+  color: #fefbea;
+  line-height: 1.25;
 }
 
-#movieTitle, #movieOverview {
-    padding:  32px;
+#movieTitle,
+#movieOverview {
+  padding: 32px;
 }
 
 #playBtn {
-    margin-top: 20px;
-    font-size: 25px;
-    padding: 7px 10px;
-    border-radius: 10px;
-    border-style: none;
-    background-color: #B97828;
-    color: #fdc238;
-    cursor:  pointer;
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  /* margin-top: 20px; */
+  font-size: 25px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: antiquewhite;
+  border: 1px solid white;
+  width: 15%;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#playBtn:hover {
+  background-color: rgb(57, 54, 54);
 }
 
 label {
-    display: block;
-    font-size: 35px;
-    margin-bottom: 5px;
+  display: block;
+  font-size: 25px;
+  margin-bottom: 5px;
+  margin-left: 100px;
+  margin-right: 10px;
 }
 
 select {
-    width: 200px;
-    height: auto;
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 15px;
+  background: transparent;
+  color: antiquewhite;
+  border: 1px solid antiquewhite;
+}
+option {
+  color: black;
 }
 
 #likeOrDislikeBtns {
-    text-align: center;
-    margin: 0px auto;  
-}
-
-#likeBtn, #dislikeBtn {
-    padding: 15px 25px;
-    font-size: 25px;
-    border-radius: 12px;
-    border-style: none;
-    cursor:  pointer;
+  text-align: center;
+  margin: 0px auto;
 }
 
 #likeBtn {
-    background-color: #249e57;
-    color: darkgreen;
+  padding: 15px 25px;
+  font-size: 25px;
+  border-radius: 12px;
+  border-style: none;
+  cursor: pointer;
 }
 
-#dislikeBtn {
-    background-color: #c74a4a;
-    color: #910000;
+#likeBtn {
+  background-color: #249e57;
+  color: darkgreen;
 }
+#likeBtn {
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  /* margin-top: 20px; */
+  font-size: 25px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: antiquewhite;
+  border: 1px solid white;
+  width: 15%;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#likeBtn:hover{
+    background-color: rgb(78, 74, 74);
+}
+/* 
+img{
+    width: ;
+} */
