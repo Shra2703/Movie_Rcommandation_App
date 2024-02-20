@@ -29,9 +29,20 @@ function populateGenreDropdow(genresObj){
     }
 }
 
+// function to clear the current movie
+function clearCurrentMovie(){
+  const moviePosterDiv = document.getElementById("moviePoster");
+  const movieTextDiv = document.getElementById("movieText");
+  moviePosterDiv.innerHTML = "";
+  movieTextDiv.innerHTML = "";
+}
+
 function showRandomMovie(){
     const movieInfo = document.getElementById("movieInfo");
-    console.log(movieInfo.childNodes);
+    if(movieInfo.childNodes.length > 0){
+      // console.log(movieInfo.childNodes.length);
+      clearCurrentMovie();
+    }
     getMovies();
 
 }
@@ -41,14 +52,15 @@ function getMovies(){
     const selectedGenre = getSlectedGenre();
     // console.log(selectedGenre);
     const urlToFetch = `https://api.themoviedb.org/3/discover/movie?api_key=2735099ea2587a2d66c564ef37de1d3b&with_genres=${selectedGenre}`;
-    console.log(urlToFetch);
+    // console.log(urlToFetch);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", urlToFetch, true);
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200) {
             const jsonResponse = JSON.parse(this.responseText);
             const randomMovie = getRandomMovies(jsonResponse.results);
-            getMovieInfo(randomMovie);
+            // getMovieInfo(randomMovie);
+            displayMovie(randomMovie);
             console.log(randomMovie)
         }
     }
@@ -70,11 +82,64 @@ function getRandomMovies(movies){
     return randomMovie;
 }
 
+// function to display the movie
+function displayMovie(movieInfo){
+  const moviePosterDiv = document.getElementById("moviePoster");
+  const movieTextDiv = document.getElementById("movieText");
+  const likeBtn = document.getElementById("likeBtn");
 
-function getMovieInfo(randomMovie){
-    console.log(randomMovie.title)
+  const moviePoster = createMoviePoster(movieInfo.poster_path);
+  const titleHeader = createMovieTitle(movieInfo.original_title)
+  const overviewText = createMovieOverview(movieInfo.overview)
+  moviePosterDiv.appendChild(moviePoster);
+  movieTextDiv.appendChild(titleHeader);
+  movieTextDiv.appendChild(overviewText);
+
+  showBtns();
+  likeBtn.addEventListener("click", nextMovie);
+
+  
+
 }
 
+// function to create movie poster
+function createMoviePoster(posterPath){
+  const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
+  const posterImg = document.createElement("img");
+  posterImg.setAttribute("src", moviePosterUrl);
+  posterImg.setAttribute("id", "moviePoster");
+  return posterImg;
+}
+
+// function to create movie title
+function createMovieTitle(title){
+  
+  const titleHeader = document.createElement("h1");
+  titleHeader.setAttribute("id", "moviePoster");
+  titleHeader.innerHTML = title;
+  return titleHeader;
+}
+
+// function to create movie description
+function createMovieOverview(overview){
+  const overviewParagraph = document.createElement("p");
+  overviewParagraph.setAttribute("id", "movieOverview");
+  overviewParagraph.innerHTML = overview;
+  return overviewParagraph;
+}
+
+// function to show the next btn
+function showBtns(){
+  const btnDiv = document.getElementById("likeOrDislikeBtns");
+  btnDiv.removeAttribute("hidden")
+}
+
+
+// function invoked then next movie will displayed
+function nextMovie(){
+  clearCurrentMovie();
+  showRandomMovie();
+}
 
 
 getGeneres();
