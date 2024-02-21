@@ -5,6 +5,8 @@ body {
 
   background: linear-gradient(rgba(2, 0, 36, 1) 60%, rgb(87, 84, 84));
   color: antiquewhite;
+overflow-y: hidden;
+  /* height: 100rem; */
 }
 
 #appTitle {
@@ -38,13 +40,15 @@ body {
 } */
 
 #movieInfo {
-  width: 65%;
+  width: 40%;
   margin: 32px auto;
-  border: 1px solid antiquewhite;
+  /* border: 1px solid antiquewhite; */
   border-radius: 20px;
   box-shadow: 5px 10px 18px 2px rgb(87, 84, 84);
-  height: 28rem;
+  height: 22rem;
   padding: 20px;
+  display: flex;
+  justify-content:flex-start;
 }
 
 #movieInfo:after {
@@ -56,25 +60,44 @@ body {
 #moviePoster,
 #movieText {
   width: 50%;
-  float: left;
+  /* border: 1px solid white; */
+  /* float: left; */
 }
 
-img#moviePoster {
+img {
+  height: 22rem;
+  border-radius: 10px;
+
+ 
+}
+
+img#moviePoster{
   width: auto;
-  height: 28rem;
+  height: 22rem;
   display: block;
   margin: auto;
+  border-radius: 10px;
+  /* border: 1px solid white; */
 }
 
 #movieText {
-  font-family: "Questrial";
   color: #fefbea;
   line-height: 1.25;
+  /* border: 1px solid white; */
+
+}
+h1{
+  font-size: 30px;
+
 }
 
-#movieTitle,
+/* #movieTitle,
 #movieOverview {
   padding: 32px;
+} */
+
+#movieOverview{
+  text-align:justify;
 }
 
 #playBtn {
@@ -102,7 +125,7 @@ label {
   font-size: 25px;
   margin-bottom: 5px;
   margin-left: 100px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 select {

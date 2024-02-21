@@ -35,6 +35,7 @@ function clearCurrentMovie(){
   const movieTextDiv = document.getElementById("movieText");
   moviePosterDiv.innerHTML = "";
   movieTextDiv.innerHTML = "";
+  // document.getElementsByTagName("h1").innerHTML = ""
 }
 
 function showRandomMovie(){
@@ -52,7 +53,7 @@ function getMovies(){
     const selectedGenre = getSlectedGenre();
     // console.log(selectedGenre);
     const urlToFetch = `https://api.themoviedb.org/3/discover/movie?api_key=2735099ea2587a2d66c564ef37de1d3b&with_genres=${selectedGenre}`;
-    // console.log(urlToFetch);
+    console.log(urlToFetch);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", urlToFetch, true);
     xhr.onreadystatechange = function(){
@@ -95,6 +96,8 @@ function displayMovie(movieInfo){
   movieTextDiv.appendChild(titleHeader);
   movieTextDiv.appendChild(overviewText);
 
+  // document.getElementsByTagName("h1").innerHTML = movieInfo.original_title;
+
   showBtns();
   likeBtn.addEventListener("click", nextMovie);
 
@@ -115,7 +118,7 @@ function createMoviePoster(posterPath){
 function createMovieTitle(title){
   
   const titleHeader = document.createElement("h1");
-  titleHeader.setAttribute("id", "moviePoster");
+  titleHeader.setAttribute("id", "movieTitle");
   titleHeader.innerHTML = title;
   return titleHeader;
 }
